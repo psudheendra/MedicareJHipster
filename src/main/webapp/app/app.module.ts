@@ -18,6 +18,14 @@ import { MedicareAccountModule } from './account/account.module';
 import { MedicareEntityModule } from './entities/entity.module';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ErrorComponent } from './layouts';
+import { ActionitemComponent } from './actionitem/actionitem.component';
+import { BusinessOwnerComponent } from './business-owner/business-owner.component';
+import { AngularEditorModule } from '@kolkov/angular-editor';
+import { NgxEditorModule } from 'ngx-editor';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 
 @NgModule({
     imports: [
@@ -28,10 +36,25 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
         MedicareCoreModule,
         MedicareHomeModule,
         MedicareAccountModule,
-        MedicareEntityModule
+        MedicareEntityModule,
+        AngularEditorModule,
+        FontAwesomeModule,
+        NgxEditorModule,
+        TooltipModule.forRoot()
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
-    declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent],
+    exports: [AngularEditorModule],
+    declarations: [
+        JhiMainComponent,
+        NavbarComponent,
+        ErrorComponent,
+        PageRibbonComponent,
+        FooterComponent,
+        ActionitemComponent,
+        BusinessOwnerComponent,
+        ParentComponent,
+        ChildComponent
+    ],
     providers: [
         {
             provide: HTTP_INTERCEPTORS,
