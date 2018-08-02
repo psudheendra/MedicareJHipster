@@ -1,0 +1,36 @@
+<p>
+  form-task-hide-show works!
+</p>
+
+<div>
+  <label>Summary: </label>
+  <select (change)="filterForeCasts($event.target.value)">
+    <option value="0">--All--</option>
+    <option *ngFor="let summary of summaries" value={{summary}}>
+      {{summary}}
+    </option>
+  </select>
+</div>
+
+
+<div *ngIf="show" class="myDiv">Something Here</div>
+
+<table class="table">
+  <thead class="thead-dark">
+    <!-- <tr> -->
+    <th *ngFor=" let column of displayColumns">
+      {{column.dispCol}}
+    </th>
+    <!-- </tr> -->
+  </thead>
+  <tbody>
+    <tr *ngFor="let character of tableSource.characters">
+        <td *ngFor=" let key of displayColumns">
+            {{character[key.dbCol]}}
+          </td>
+      <!-- <td>{{ character.id }}</td>
+      <td>{{ character.name }}</td>
+      <td>{{ character.age }}</td> -->
+    </tr>
+  </tbody>
+</table>

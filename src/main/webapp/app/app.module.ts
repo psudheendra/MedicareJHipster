@@ -26,6 +26,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { FormTaskHideShowComponent } from './form-task-hide-show/form-task-hide-show.component';
 
 @NgModule({
     imports: [
@@ -53,7 +54,8 @@ import { ChildComponent } from './child/child.component';
         ActionitemComponent,
         BusinessOwnerComponent,
         ParentComponent,
-        ChildComponent
+        ChildComponent,
+        FormTaskHideShowComponent
     ],
     providers: [
         {
