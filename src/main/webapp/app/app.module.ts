@@ -27,6 +27,20 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { FormTaskHideShowComponent } from './form-task-hide-show/form-task-hide-show.component';
+import { DashboardComponent } from './layouts/dashboard/dashboard.component';
+import { DefaultLayoutComponent } from './layouts/default-layout/default-layout.component';
+import { AppAsideModule, AppBreadcrumbModule, AppHeaderModule, AppFooterModule, AppSidebarModule } from '@coreui/angular';
+// Import 3rd party components
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TabsModule } from 'ngx-bootstrap/tabs';
+// import { ChartsModule } from 'ng2-charts/ng2-charts';
+import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { EmptyComponent } from './layouts/empty/empty.component';
+
+const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+    suppressScrollX: true
+};
 
 @NgModule({
     imports: [
@@ -41,6 +55,14 @@ import { FormTaskHideShowComponent } from './form-task-hide-show/form-task-hide-
         AngularEditorModule,
         FontAwesomeModule,
         NgxEditorModule,
+        AppAsideModule,
+        AppBreadcrumbModule.forRoot(),
+        AppFooterModule,
+        AppHeaderModule,
+        AppSidebarModule,
+        PerfectScrollbarModule,
+        BsDropdownModule.forRoot(),
+        TabsModule.forRoot(),
         TooltipModule.forRoot()
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
@@ -55,7 +77,10 @@ import { FormTaskHideShowComponent } from './form-task-hide-show/form-task-hide-
         BusinessOwnerComponent,
         ParentComponent,
         ChildComponent,
-        FormTaskHideShowComponent
+        FormTaskHideShowComponent,
+        DashboardComponent,
+        DefaultLayoutComponent,
+        EmptyComponent
     ],
     providers: [
         {
@@ -83,6 +108,6 @@ import { FormTaskHideShowComponent } from './form-task-hide-show/form-task-hide-
             deps: [Injector]
         }
     ],
-    bootstrap: [JhiMainComponent]
+    bootstrap: [DefaultLayoutComponent]
 })
 export class MedicareAppModule {}

@@ -4,7 +4,7 @@ import { errorRoute, navbarRoute } from './layouts';
 import { DEBUG_INFO_ENABLED } from 'app/app.constants';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 
-const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
+const LAYOUT_ROUTES = [...errorRoute];
 
 @NgModule({
     imports: [
